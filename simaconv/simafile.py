@@ -3,11 +3,6 @@
 #######################################################
 # Author: F. Dan O'Neill
 # Date: 7/5/2019
-# Script title: sima_analysis.py
-# Description:	Estefania Puricelli recieved a mystery dataset from the SIMA group, an
-#				agricultural monitoring organization. It consists of crop types, dates,
-#				and lat-lon lists. This program is a workspace for figuring out what the
-#				hell the dataset is.
 ########################################################
 
 import os, sys, logging
@@ -171,7 +166,10 @@ def main():
 		type=str,
 		help='Path to output shapefile')
 	args = parser.parse_args()
+	cleanFile(args.csv_path)
 	sf = SimaFile(args.csv_path)
+	sf.loadJson()
+	sf.writeShapefile(args.shapefile_path)
 
 if __name__ == "__main__":
 	main()

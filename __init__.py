@@ -1,1 +1,1 @@
-from .simaconv.simafile import SimaFile
+from .simaconv.simafile import *
