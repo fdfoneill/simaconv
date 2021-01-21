@@ -10,9 +10,9 @@ def readme():
 	with open('README.md') as f:
 		return f.read()
 
-exec(open('simaconv/_version.py').read())
+exec(open(os.path.join(HERE,'_version.py')).read())
 
-setup(name='tsharvest',
+setup(name='simaconv',
 		version=__version__,
 		description='Tool to convert SIMA csv files to shapefile format',
 		long_description=readme(),
